@@ -130,6 +130,8 @@ composer require guzzlehttp/guzzle
 An example of sending a GET request to StarWars API can be found here:
 
 ```php
+// TODO: Add use
+
 $client = new GuzzleHttp\Client();
 $res = $client->request('GET', 'https://swapi.co/api/starships/9/');
 echo $res->getStatusCode();
@@ -175,6 +177,40 @@ $object = $serializer->deserialize($jsonData, 'MyNamespace\MyObject', 'json');
 
 #### Doctrine2 (orm)
 #### Assetic (asset management)
+
 #### Carbon (datetime handling)
+
+[Carbon](https://carbon.nesbot.com/) is a simple PHP API extension for DateTime.
+
+In order to make use of the library, a simple composer command is required:
+
+```bash
+composer require nesbot/carbon
+```
+
+Carbon can be used to manipulate the date and time in an easier fashion than PHP's DateTime functionality. Examples of making use of this library can be found below:
+
+
+```php
+use Carbon\Carbon;
+
+$date = Carbon::now();
+$modifiedMutable = $date->add(1, 'day');
+$date->isMutable(); // will return true
+$date->isImmutable(); // Will return false
+
+Carbon::tomorrow('Europe/London'); // 2018-10-13 00:00:00
+
+Carbon::yesterday(); // 2018-10-11 00:00:00
+
+Carbon::createFromDate(null, 12, 25); // Christmas this year because null defaults to current year.
+
+$date->diffInYears($date->copy()->addYears(2)); // Would return 2
+
+$date->add('1 day 3 hours')->calendar(); // Tomorrow at 1:00 PM
+```
+
+There are a great number of functions available in this amazing library. All of these are documented and can be found [here](https://carbon.nesbot.com/docs/#api-instantiation)
+
 #### Monolog (logging)
 #### Swift (email send)
