@@ -139,7 +139,40 @@ echo $res->getHeader('content-type');
 echo $res->getBody();
 // {"name": "Death Star",...
 ```
+
 #### Serializer (serialize objects)
+
+Serializer allows you to serialize and deserialize objects and data of any complexity. The library currently supports both XML and JSON. It also provides a tool-set to adapt the output of your data to suit your specific requirements.
+
+Some of the built-in features of Serializer include the following:
+
+* (De-)serialize data of any complexity; circular references are handled gracefully.
+* Supports many built-in PHP types (such as dates)
+* Integrates with Doctrine ORM, et. al.
+* Supports versioning, e.g. for APIs
+* Configurable via XML, YAML, or Doctrine Annotations
+
+In order to make use of this library, a simple composer command is required:
+
+```bash
+composer require jms/serializer
+```
+
+Examples to serialize an object in JSON or XML can be seen below:
+
+```php
+$serializer = JMS\Serializer\SerializerBuilder::create()->build();
+$serializer->serialize($object, 'json');
+$serializer->serialize($object, 'xml');
+```
+
+Examples to deserialize an object in JSON can be seen below:
+
+```php
+$serializer = JMS\Serializer\SerializerBuilder::create()->build();
+$object = $serializer->deserialize($jsonData, 'MyNamespace\MyObject', 'json');
+```
+
 #### Doctrine2 (orm)
 #### Assetic (asset management)
 #### Carbon (datetime handling)
