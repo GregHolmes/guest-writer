@@ -213,4 +213,33 @@ $date->add('1 day 3 hours')->calendar(); // Tomorrow at 1:00 PM
 There are a great number of functions available in this amazing library. All of these are documented and can be found [here](https://carbon.nesbot.com/docs/#api-instantiation)
 
 #### Monolog (logging)
+
+[Monolog](https://github.com/Seldaek/monolog) allows developers to send logs to the destination of their choice, whether it be to a file, socket, inbox, database or various web services. The complete list of handlers can be found (in these documents)[https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md], however some key handlers are:
+
+* StreamHandler: Logs records into any PHP stream, use this for log files.
+* SwiftMailerHandler: Sends emails using a Swift_Mailer instance.
+* RedisHandler: Logs records to a redis server.
+
+In order to make use of the library, a simple composer command is required:
+
+```bash
+composer require monolog/monolog
+```
+
+A basic example of using the StreamHandler can be found below:
+
+```php
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+// Create the logger
+$logger = new Logger('my_logger');
+// Now add some handlers
+$logger->pushHandler(new StreamHandler(__DIR__.'/my_app.log', Logger::DEBUG));
+
+// You can now use your logger
+$logger->info('My logger is now ready');
+$logger->error('The site is broken!');
+```
+
 #### Swift (email send)
