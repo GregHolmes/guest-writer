@@ -66,6 +66,7 @@ $faker->creditCardDetails
 There are a vast number of different bits of data that can be faked with this library. To view this list, the URL can be found here: [https://github.com/fzaninotto/Faker](https://github.com/fzaninotto/Faker)
 
 #### PHPUnit (testing)
+
 #### Email Validator (validation)
 
 Email validation can very difficult to ensure that you've covered all aspects of ensuring the e-mail is valid in both syntax and whether the domain for example actually has email addresses.
@@ -176,6 +177,7 @@ $object = $serializer->deserialize($jsonData, 'MyNamespace\MyObject', 'json');
 ```
 
 #### Doctrine2 (orm)
+
 #### Assetic (asset management)
 
 #### Carbon (datetime handling)
