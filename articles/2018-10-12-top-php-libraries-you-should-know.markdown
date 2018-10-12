@@ -180,7 +180,7 @@ $object = $serializer->deserialize($jsonData, 'MyNamespace\MyObject', 'json');
 
 #### Carbon (datetime handling)
 
-[Carbon](https://carbon.nesbot.com/) is a simple PHP API extension for DateTime.
+[Carbon](https://carbon.nesbot.com/) is a simple PHP API extension for DateTime containing a vast number of functions making date and time retrieval and manipulation much easier for developers in their projects.
 
 In order to make use of the library, a simple composer command is required:
 
