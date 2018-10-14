@@ -244,6 +244,10 @@ $object = $serializer->deserialize($jsonData, 'MyNamespace\MyObject', 'json');
 
 #### Doctrine2 (orm)
 
+Doctrine 2 is a library that gives developers an alternative to writing SQL within their projects. Doctrine 2 is an object-relational mapper (ORM), which is on top of a database abstraction layer (DBAL). This means that Doctrine 2 makes the lives of the developers easier by managing the translation of PHP objects into relational databases and vice-versa. One of the key features provided by Doctrine 2 is Doctrine Query Language (DQL), which provides querying capabilities over your object model.
+
+Doctrine 2 requires some configuration during the set up. To follow the official documentation please head over to: [Getting started with Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/getting-started.html).
+
 #### Assetic (asset management)
 
 #### Carbon (datetime handling)
