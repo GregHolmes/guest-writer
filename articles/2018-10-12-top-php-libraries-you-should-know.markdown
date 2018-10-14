@@ -67,6 +67,72 @@ There are a vast number of different bits of data that can be faked with this li
 
 #### PHPUnit (testing)
 
+PHPUnit is a testing framework for PHP with the focus of developers ensuring maximum coverage of their software. PHPUnit is an instance of the xUnit architecture for unit testing frameworks
+
+The intention of PHPUnit is to allow developers to spot mistakes / bugs in their code created by newly committed code, without the need for full regression tests every time. PHPUnit makes use of assertions to verify that the behaviour of the specific unit is as expected and doesn't cause any side effects or bugs.
+
+In order to make use of this library, a simple composer command is required:
+
+```bash
+composer require --dev phpunit/phpunit ^7
+```
+
+Once PHPUnit is installed, you can verify the version installed by typing the following within your specified project. This is also assuming that composer is set up in your `$PATH`:
+
+```bash
+./vendor/bin/phpunit --version
+```
+
+Which should output something similar to: `PHPUnit 7.0.0 by Sebastian Bergmann and contributors.`
+
+A very basic test as provided by the [PHP Documentation](https://phpunit.de/getting-started/phpunit-7.html) shows the code found in the file: `tests/EmailTest.php`:
+
+```php
+declare(strict_types=1);
+
+use PHPUnit\Framework\TestCase;
+
+final class EmailTest extends TestCase
+{
+    public function testCanBeCreatedFromValidEmailAddress(): void
+    {
+        $this->assertInstanceOf(
+            Email::class,
+            Email::fromString('user@example.com')
+        );
+    }
+
+    public function testCannotBeCreatedFromInvalidEmailAddress(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        Email::fromString('invalid');
+    }
+
+    public function testCanBeUsedAsString(): void
+    {
+        $this->assertEquals(
+            'user@example.com',
+            Email::fromString('user@example.com')
+        );
+    }
+}
+```
+
+In order to run this test, you would need to run the following command:
+
+```bash
+./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/EmailTest
+```
+
+A break down of this command is as follows:
+
+`--bootstrap vendor/autoload.php` is to instruct the PHPUnit CLI test runner to include your autoloader found in the vendor directory before the tests are run.
+
+`tests/EmailTest` allows PHPUnit CLI test runner to know which files / tests to execute. In this instance it's the EmailTest class mentioned in the code example above.
+
+If you wished for PHPUnit CLI test runner to execute all tests within the `tests` directory, you would just need to exclude the `/EmailTest` part of the previous line.
+
 #### Email Validator (validation)
 
 Email validation can very difficult to ensure that you've covered all aspects of ensuring the e-mail is valid in both syntax and whether the domain for example actually has email addresses.
