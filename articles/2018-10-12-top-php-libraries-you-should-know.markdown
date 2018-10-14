@@ -310,4 +310,35 @@ $logger->info('My logger is now ready');
 $logger->error('The site is broken!');
 ```
 
-#### Swift (email send)
+#### Swift Mailer (Sending emails)
+
+[Swift Mailer](https://github.com/swiftmailer/swiftmailer) is a for sending e-mails from PHP applications. Swift Mailer is a very popular feature rich library and is widely accepted within the PHP community.
+
+In order to make use of the library, a simple composer command is required:
+
+```bash
+composer require "swiftmailer/swiftmailer:^6.0"
+```
+
+A basic example showing the simplicity of sending an e-mail with this library can be found below:
+
+```php
+// Create the Transport
+$transport = (new Swift_SmtpTransport('smtp.example.org', 25))
+  ->setUsername('your username')
+  ->setPassword('your password')
+;
+
+// Create the Mailer using your created Transport
+$mailer = new Swift_Mailer($transport);
+
+// Create a message
+$message = (new Swift_Message('Welcome to e-mailing with PHP'))
+  ->setFrom(['mr@smith.com' => 'Mr Smith'])
+  ->setTo(['another@email.com' => 'A name'])
+  ->setBody('Content of the message!')
+  ;
+
+// Send the message
+$result = $mailer->send($message);
+```
