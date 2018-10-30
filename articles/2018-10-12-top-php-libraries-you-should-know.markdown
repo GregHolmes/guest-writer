@@ -17,9 +17,11 @@ also provide the link to a GitHub repository that contains code related to this 
 
 ### What is PHP?
 
-PHP - Hypertext Preprocessor (AKA PHP) is a server-side scripting language. Created by Rasmus Lerdorf in 1994 and built upon / improved vastly in the time between then and now. Originally PHP's name was Personal Home Page, however this has evolved into the recursive acronym it is now.
+PHP - Hypertext Preprocessor (also known as PHP) is a server-side scripting language created in 1994 by a Danish-Canadian developer called Rasmus Lerdorf. Rasmus is still an active contributer to the PHP project. The original purpose of PHP was to track the visits to Rasmus’ online resume which he had named PHP, consisting of a number of scripts, “Personal Home Page Tools”.
 
-The PHP language is a very popular programming language, developed in and supported by developers worldwide. Due to the coverage the language has worldwide, there are a vast number of libraries developed and maintained, created for various specific purposes.
+The PHP language is a very popular web programming language used, developed in and supported by many developers worldwide. It is believed that around 78% of the Internet that uses server side languages are using PHP. These sites include popular ones such as Facebook, Wikipedia, Wordpress.com, Pinterest and Yahoo. Due to the coverage the language has worldwide, there are a vast number of libraries developed and maintained, created for various specific purposes.
+
+This article is going to introduce a number of libraries built in PHP that as a developer in this language, you must know.
 
 ### The libraries
 
