@@ -23,7 +23,7 @@ The PHP language is a very popular programming language, developed in and suppor
 
 ### The libraries
 
-##### Faker (Test data)
+#### Faker (Test data)
 
 [Faker by Fzaninotto is a PHP library](https://github.com/fzaninotto/Faker) that allows you to generate fake data to be used throughout your development environment. This is a great tool that can be used to bootstrap your database to make use as a fully functioning service.
 
@@ -242,11 +242,13 @@ $serializer = JMS\Serializer\SerializerBuilder::create()->build();
 $object = $serializer->deserialize($jsonData, 'MyNamespace\MyObject', 'json');
 ```
 
-#### Doctrine2 (orm)
+#### Doctrine (orm)
 
-Doctrine 2 is a library that gives developers an alternative to writing SQL within their projects. Doctrine 2 is an object-relational mapper (ORM), which is on top of a database abstraction layer (DBAL). This means that Doctrine 2 makes the lives of the developers easier by managing the translation of PHP objects into relational databases and vice-versa. One of the key features provided by Doctrine 2 is Doctrine Query Language (DQL), which provides querying capabilities over your object model.
+Doctrine - specifically Doctrine 2 - is a library that gives developers an alternative to writing SQL within their projects. Doctrine is an object-relational mapper (ORM), which is on top of a database abstraction layer (DBAL). This means that Doctrine makes the lives of the developers easier by managing the translation of PHP objects into relational databases and vice-versa. One of the key features provided by Doctrine is Doctrine Query Language (DQL), which provides querying capabilities over your object model.
 
-Doctrine 2 requires some configuration during the set up. To follow the official documentation please head over to: [Getting started with Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/getting-started.html).
+Doctrine requires some configuration during the set up. To follow the official documentation please head over to: [Getting started with Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/getting-started.html).
+
+
 
 #### Assetic (asset management)
 
