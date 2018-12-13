@@ -250,9 +250,18 @@ Doctrine - specifically Doctrine 2 - is a library that gives developers an alter
 
 Doctrine requires some configuration during the set up. To follow the official documentation please head over to: [Getting started with Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/getting-started.html).
 
+#### Webpack Encore (asset management)
 
+Webpack Encore is a method of integrating [Webpack](https://webpack.js.org/) (An asset bundler) into your web application. By using Webpack Encore, developers can bundle JavaScript modules, pre-process CSS and JavaScript files as well as compile your assets.
 
-#### Assetic (asset management)
+In order to make use of the libary, a simple yarn or npm command needs to be carried out, an example of both of these can be found below (please note, only one command is required):
+
+```bash
+yarn add @symfony/webpack-encore --dev
+npm install @symfony/webpack-encore --save-dev
+```
+
+Webpack Encore requires some configuration during the set up. To follow the official documentation please head over to: [Encore Installation](https://symfony.com/doc/current/frontend/encore/installation-no-flex.html)
 
 #### Carbon (datetime handling)
 
@@ -350,3 +359,5 @@ $message = (new Swift_Message('Welcome to e-mailing with PHP'))
 // Send the message
 $result = $mailer->send($message);
 ```
+
+### Conclusion
