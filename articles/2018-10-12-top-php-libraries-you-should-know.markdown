@@ -359,5 +359,3 @@ $message = (new Swift_Message('Welcome to e-mailing with PHP'))
 // Send the message
 $result = $mailer->send($message);
 ```
-
-### Conclusion
